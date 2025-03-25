@@ -1,0 +1,205 @@
+/*
+ * Globals CSS - Layout and structure styles
+ * Theme colors are handled in theme.css
+ */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* App Layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout Components */
+main {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+/* Grid Layout Helpers */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Vertical Spacing */
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-block: 0;
+}
+
+.stack > * + * {
+  margin-block-start: var(--space-md, 1rem);
+}
+
+.stack-sm > * + * {
+  margin-block-start: var(--space-sm, 0.5rem);
+}
+
+.stack-lg > * + * {
+  margin-block-start: var(--space-lg, 1.5rem);
+}
+
+/* Horizontal Spacing */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md, 1rem);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cluster-sm {
+  gap: var(--space-sm, 0.5rem);
+}
+
+.cluster-lg {
+  gap: var(--space-lg, 1.5rem);
+}
+
+/* Flexbox Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+/* Visibility */
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Navigation Styles */
+.navigation-tabs {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.navigation-tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: sticky;
+  top: 80px;
+  padding: 16px;
+}
+
+/* Z-index utilities */
+.z-index-dropdown {
+  z-index: var(--z-index-dropdown, 1050) !important;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .md\:grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hidden-md-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hidden-md-up {
+    display: none !important;
+  }
+
+  .md\:grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .stack > * + * {
+    margin-block-start: var(--space-sm, 0.5rem);
+  }
+
+  .hidden-sm {
+    display: none !important;
+  }
+}

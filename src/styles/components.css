@@ -1,0 +1,443 @@
+/* Add new carousel styles for multiple cards */
+.weather-carousel-container {
+  position: relative;
+  padding: 0 30px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.carousel-card {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  min-width: 0;
+}
+
+/* Carousel indicator dots */
+.carousel-indicators {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel-indicator-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.carousel-indicator-dot.active {
+  background-color: var(--primary-300);
+}
+
+/* Carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.2s;
+  color: #333;
+  padding: 3px;
+}
+
+.carousel-control-prev {
+  left: -8px;
+}
+
+.carousel-control-next {
+  right: -8px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive weather cards */
+@media (max-width: 767.98px) {
+  .weather-carousel-container {
+    padding: 0 20px;
+  }
+
+  .weather-carousel .card {
+    width: 100% !important;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Mobile search bar visibility */
+  .mobile-search-bar {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    padding: 0.75rem 1rem !important;
+    background-color: transparent !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 50%;
+  }
+}
+.modal-content {
+  color: var(--gray-200)
+}
+
+.modal-content input ::placeholder{
+  color: var(--color-text-primary)
+}
+
+/* Mobile search overlay */
+.mobile-search-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  padding: 0.75rem 1rem;
+  z-index: 1030;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.2s ease-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-search-overlay .search-container {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-search-overlay .input-group {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.mobile-search-overlay .form-control {
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  box-shadow: none !important;
+  background-color: white;
+  padding-left: 15px;
+}
+
+.mobile-search-overlay .form-control:focus {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.mobile-search-overlay .btn {
+  border: none;
+  background-color: transparent;
+  color: #757575;
+  padding-right: 15px;
+}
+
+.mobile-search-overlay .btn:hover,
+.mobile-search-overlay .btn:focus {
+  background-color: transparent;
+  color: #212529;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* User avatar */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: var(--bs-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Make the side menu close on select item */
+.offcanvas-body .list-group-item {
+  cursor: pointer;
+}
+
+/* Category accordion dropdown panel */
+.category-menu {
+  background-color: var(--color-search-bg);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(122, 88, 88, 0.1);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Fix for mobile input fields */
+.modal-content input,
+.modal-content button {
+  font-size: 16px !important; /* prevents iOS zoom on focus */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+@media (max-width: 767.98px) {
+  .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100% - 1rem);
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* Custom icon styles for all icons and buttons */
+.icon,
+.btn-icon,
+.nav-icon,
+.category-icon,
+.weather-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon:hover,
+.btn-icon:hover,
+.nav-icon:hover,
+.category-icon:hover,
+.weather-icon:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.icon:active,
+.btn-icon:active,
+.nav-icon:active,
+.category-icon:active,
+.weather-icon:active {
+  transform: scale(0.95);
+}
+
+/* Category icon specific styles */
+.category-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon-img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+/* Weather icon specific styles */
+.weather-icon-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Button hover states */
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(28, 4, 32, 0.75);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon buttons (close, hamburger menu, etc.) */
+.btn-close,
+.navbar-toggler {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-close:hover,
+.navbar-toggler:hover {
+  transform: rotate(90deg);
+  opacity: 0.8;
+}
+
+.btn-close:active,
+.navbar-toggler:active {
+  transform: rotate(90deg) scale(0.95);
+}
+
+/* Navigation links */
+.nav-link {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--bs-primary) !important;
+}
+
+.nav-link:active {
+  transform: scale(0.97);
+}
+
+/* Updated navigation tab styles for inline layout */
+.nav-tab {
+  color: #333;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nav-tab:hover {
+  color: var(--bs-primary);
+}
+
+.nav-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--bs-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-tab:hover::after {
+  width: 100%;
+}
+
+.nav-tab.active {
+  color: var(--bs-primary);
+}
+
+.nav-tab.active::after {
+  width: 100%;
+}
+
+/* Makes images properly responsive */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive header adjustments */
+@media (max-width: 767.98px) {
+  /* Make the search bar obvious in mobile */
+  .mobile-search-bar .form-control {
+    border-radius: 20px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    height: 40px !important;
+  }
+
+  .mobile-search-bar .input-group-sm {
+    height: 40px !important;
+  }
+
+  .mobile-search-bar .btn {
+    height: 40px !important;
+    border-radius: 0 20px 20px 0 !important;
+  }
+}
+
+/* Improved desktop layout */
+@media (min-width: 768px) {
+  .category-accordion {
+    margin-right: 1rem;
+  }
+
+  /* Make navigation tabs more compact */
+  .nav-tab {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.4rem;
+  }
+
+  /* Desktop search bar styles */
+  .search-container .input-group {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .search-container .form-control {
+    border: none;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+
+  .search-container .btn {
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    color: #757575;
+  }
+
+  .search-container .btn:hover {
+    background-color: var(--color-bg-footer);
+    color: #212529;
+  }
+}
+
+
+.btnsn{
+  background-color: var(--color-bg-header);
+  border: none;
+  color: var(--color-text-primary-)
+}
+.btnsn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(28, 4, 32, 0.75);
+  
+}

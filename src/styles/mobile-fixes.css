@@ -1,0 +1,160 @@
+/* Critical mobile input fixes */
+@media (max-width: 767.98px) {
+  /* These rules ensure inputs have proper attributes in mobile view */
+  .mobile-input,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    /* Force appearance */
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+
+    /* Prevent zoom */
+    font-size: 16px !important;
+
+    /* Critical fixes */
+    position: relative !important;
+    z-index: 9999 !important;
+    width: 100% !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    max-height: none !important;
+    max-width: 100% !important;
+    touch-action: manipulation !important;
+
+    /* Make sure ID is respected */
+    unicode-bidi: isolate !important;
+
+    /* Force the browser to recognize text input */
+    user-select: text !important;
+    -webkit-user-select: text !important;
+
+    /* Ensure the element is properly rendered */
+    backface-visibility: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    /* Fix Safari issues */
+    -webkit-text-size-adjust: 100% !important;
+  }
+
+  /* Fix focus states */
+  .mobile-input:focus,
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  textarea:focus,
+  select:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25) !important;
+  }
+
+  /* Improve form labels */
+  .form-label {
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 500 !important;
+  }
+
+  /* Ensure input containers display properly */
+  .input-container {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Fix checkbox issues */
+  input[type="checkbox"] {
+    -webkit-appearance: checkbox !important;
+    -moz-appearance: checkbox !important;
+    appearance: checkbox !important;
+    width: 1.2em !important;
+    height: 1.2em !important;
+  }
+
+  /* Higher quality form display */
+  .modal-content .form-control {
+    border-radius: 0.375rem !important;
+    border: 1px solid #ced4da !important;
+    padding: 0.75rem 1rem !important;
+    width: 100% !important;
+    margin-bottom: 0.5rem !important;
+    background-color: #fff !important;
+    color: #212529 !important;
+  }
+
+  /* Fix invalid feedback display */
+  .invalid-feedback,
+  .invalid-feedback.d-block {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.875em !important;
+    color: #dc3545 !important;
+  }
+
+  /* Fix modal dialog positioning */
+  .modal-dialog {
+    margin: 10px auto !important;
+    width: 92% !important;
+    max-width: 92% !important;
+  }
+
+  /* Fix modal content */
+  .modal-content {
+    border-radius: 0.5rem !important;
+    border: none !important;
+    overflow: hidden !important;
+  }
+
+  /* Improve modal header and footer */
+  .modal-header,
+  .modal-footer {
+    padding: 1rem !important;
+    border-color: rgba(0,0,0,0.1) !important;
+  }
+
+  /* Fix modal body */
+  .modal-body {
+    padding: 1.25rem 1rem !important;
+  }
+
+  /* Force inputs to be visible and interactive */
+  html body form input[type="text"],
+  html body form input[type="email"],
+  html body form input[type="password"],
+  html body form textarea,
+  html body form select {
+    display: block !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* Fix for special cases where ID might be overlooked */
+  [id]:not([id=""]) {
+    unicode-bidi: isolate !important;
+  }
+
+  /* Hide any Made with Same badges */
+  [class*="same-badge"],
+  [id*="same-badge"],
+  [class*="made-with-same"],
+  [id*="made-with-same"],
+  [data-made-with-same],
+  a[href*="same-app.com"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
