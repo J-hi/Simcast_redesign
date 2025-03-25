@@ -135,7 +135,7 @@ function App() {
             <div className="row d-block d-md-none mb-3">
               <div className="col-12">
                 <h6 className="fw-bold mb-2 text-weather small">Weather Updates</h6>
-                <WeatherCarousel cities={weatherData} />
+                <WeatherCarousel cities={weatherData} />git statu
               </div>
             </div>
 
@@ -154,7 +154,7 @@ function App() {
               </div>
 
               {/* Sidebar - smaller width */}
-              <div className="col-lg-4 col-md-5 d-none d-md-block">
+              <div className="col-lg-3 col-md-3 d-none d-md-block">
                 <Sidebar />
               </div>
             </div>
