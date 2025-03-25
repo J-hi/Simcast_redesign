@@ -165,7 +165,7 @@ const Header = ({ user, onSignInClick, onSignOut }) => {
                 <span className="d-none">Menu</span>
               </button>
               <Link to="/" className="d-flex align-items-center text-decoration-none">
-              <img src="src/assets/icons8-news-48.png" alt="Logo" className="custom-svg" />
+              <img src="https://img.icons8.com/?size=100&id=yjkzJadsK3kX&format=png&color=000000" alt="Logo" className="custom-svg" />
                 <span className="ms-2 h3 fw-bold ">Simcast</span>
               </Link>
             </div>
