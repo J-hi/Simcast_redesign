@@ -5,13 +5,7 @@ import WeatherCarousel from './WeatherCarousel';
 const Sidebar = () => {
   // Sample weather data for multiple cities
   const weatherData = [
-    {
-      location: 'New Delhi, IN',
-      temperature: '35°C',
-      condition: 'Sunny',
-      high: '38°C',
-      low: '27°C'
-    },
+   
     {
       location: 'Ujjain, IN',
       temperature: '32°C',
@@ -19,27 +13,7 @@ const Sidebar = () => {
       high: '34°C',
       low: '26°C'
     },
-    {
-      location: 'Indore, IN',
-      temperature: '33°C',
-      condition: 'Clear',
-      high: '35°C',
-      low: '25°C'
-    },
-    {
-      location: 'Ahmedabad, IN',
-      temperature: '36°C',
-      condition: 'Sunny',
-      high: '39°C',
-      low: '28°C'
-    },
-    {
-      location: 'Bhopal, IN',
-      temperature: '31°C',
-      condition: 'Cloudy',
-      high: '33°C',
-      low: '24°C'
-    }
+  
   ];
 
   return (
